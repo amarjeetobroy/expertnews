@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert News</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/assets/logooo.png">
+
+    <script src="https://kit.fontawesome.com/725d283ca8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- -----------------------Nav-bar start------------------------ -->
+    <nav>
+        <div class="menu-icon">
+            <span class="fas fa-bars"></span>
+        </div>
+        
+        <div class="logo">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="./assets/logooo.png" alt="company logo">
+            </a>
+        </div>
+
+        <div class="nav-items">
+            <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')"><a href="#">IPL</a></li>
+            <li class="hover-link nav-item" id="finance"  onclick="onNavItemClick('finance')"><a href="#">Finance</a></li>
+            <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')"><a href="#">Politics</a></li>
+            <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')"><a href="#">Technology</a></li>
+            <li class="hover-link nav-item" id="crypto currency" onclick="onNavItemClick('crypto currency')"><a href="#">Crypto currency</a></li>
+            <li class="hover-link nav-item" id="cricket" onclick="onNavItemClick('cricket')"><a href="#">Cricket</a></li>          
+        </div>
+        <div class="search-icon">
+            <span class="fas fa-search"></span>
+        </div>
+        <div class="cancel-icon">
+            <span class="fas fa-times"></span>
+        </div>
+        
+        <form action="#">
+            <input id="search-text" type="search" class="search-data" placeholder="search" required>
+            <button id="search-button" type="submit" class="fas fa-search"></button>
+        </form>
+
+    </nav>
+<!-- -------------------------Nav-bar end----------------------------------------- -->
+
+    <script>
+        const menuBtn = document.querySelector(".menu-icon span");
+const searchBtn = document.querySelector(".search-icon");
+const cancelBtn = document.querySelector(".cancel-icon");
+const items = document.querySelector(".nav-items");
+const form = document.querySelector("form");
+menuBtn.onclick = ()=>{
+    items.classList.add("active");
+    menuBtn.classList.add("hide");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+cancelBtn.onclick = ()=>{
+    items.classList.remove("active");
+    menuBtn.classList.remove("hide");
+    searchBtn.classList.remove("hide");
+    cancelBtn.classList.remove("show");
+    form.classList.remove("active");
+}
+searchBtn.onclick = ()=>{
+    form.classList.add("active");
+    searchBtn.classList.add("hide");
+    cancelBtn.classList.add("show");
+}
+    </script>
+    <!-- ------------------------------------------------------- ----------------->
+    <!-- <nav>
+        <div class="menu-icon">
+            <span class="fas-fa-bars"></span>
+        </div>
+
+        <div class="main-nav container flex">
+            <a href="#" onclick="reload()" class="company-logo">
+                <img src="./assets/logo.png" alt="company logo">
+            </a>
+            <div class="nav-links">
+                <ul class="flex">
+                    <li class="hover-link nav-item" id="ipl" onclick="onNavItemClick('ipl')">IPL</li>
+                    <li class="hover-link nav-item" id="finance"  onclick="onNavItemClick('finance')">Finance</li>
+                    <li class="hover-link nav-item" id="politics" onclick="onNavItemClick('politics')">Politics</li>
+                    <li class="hover-link nav-item" id="technology" onclick="onNavItemClick('technology')">Technology</li>
+                    <li class="hover-link nav-item" id="cricket" onclick="onNavItemClick('cricket')">Cricket</li>
+                </ul>
+            </div>
+            <div class="search-bar flex">
+                <input id="search-text" type="text" class="news-input" placeholder="e.g. Science">
+                <button id="search-button" class="search-button">Search</button>
+            </div>
+        </div>
+    </nav> -->
+
+    <!-- ------------------------ main start --------------------------------- -->
+    <main>
+        <div class="cards-container container flex" id="cards-container">
+            <!-- <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 25/10/2024</h6>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iste distinctio tenetur tempore magnam incidunt, pariatur eius itaque ullam aperiam reprehenderit perferendis hic animi provident nulla illo exercitationem natus accusamus.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 25/10/2024</h6>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iste distinctio tenetur tempore magnam incidunt, pariatur eius itaque ullam aperiam reprehenderit perferendis hic animi provident nulla illo exercitationem natus accusamus.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 25/10/2024</h6>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iste distinctio tenetur tempore magnam incidunt, pariatur eius itaque ullam aperiam reprehenderit perferendis hic animi provident nulla illo exercitationem natus accusamus.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+                </div>
+                <div class="card-content">
+                    <h3 id="news-title">This is the Title</h3>
+                    <h6 class="news-source" id="news-source">End Gadget 25/10/2024</h6>
+                    <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iste distinctio tenetur tempore magnam incidunt, pariatur eius itaque ullam aperiam reprehenderit perferendis hic animi provident nulla illo exercitationem natus accusamus.</p>
+                </div>
+            </div> -->
+        </div>
+    </main>
+
+    <template id="template-news-card">
+        <div class="card">
+            <div class="card-header">
+                <img src="https://via.placeholder.com/400x200" alt="news-image" id="news-img">
+            </div>
+            <div class="card-content">
+                <h3 id="news-title">This is the Title</h3>
+                <h6 class="news-source" id="news-source">End Gadget 25/10/2024</h6>
+                <p class="news-desc" id="news-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, iste distinctio tenetur tempore magnam incidunt, pariatur eius itaque ullam aperiam reprehenderit perferendis hic animi provident nulla illo exercitationem natus accusamus.</p>
+            </div>
+        </div>
+    </template>
+
+    <!-- -----------------------------Main end ------------------------------------------- -->
+
+    <!-- ---------------------------------footer-start----------------------------------------- -->
+    
+    <footer>
+        <div class="container1">
+            <div class="row1">
+                  <div class="col1" id="company1">
+                      <img src="assets/logooo.png" alt="" class="logo1">
+                      <p>
+                        Welcome to [Expert News], your trusted source for up-to-date information and in-depth analysis.
+                        
+                      </p>
+                      <div class="social1">
+                         <a href="#"><i class="fab fa-facebook"></i></a>
+                         <a href="#"><i class="fab fa-instagram"></i></a>
+                         <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                         <a href="#"><i class="fab fa-twitter"></i></a>
+                         <a href="https://www.linkedin.com/in/amarjeetobroy/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                         <a href="https://github.com/amarjeetobroy" target="_blank"><i class="fab fa-github"></i></a>
+                         <h3>follow us</h3>
+                      </div>
+                  </div>
+
+
+                  <div class="col1" id="services1">
+                     <h3>Services</h3>
+                     <div class="links1">
+                        <a href="#">Illustration</a>
+                        <a href="#">Creatives</a>
+                        <a href="#">Poster Design</a>
+                        <a href="#">Card Design</a>
+                     </div>
+                  </div>
+
+                  <div class="col1" id="useful-links1">
+                     <h3>Links</h3>
+                     <div class="links1">
+                        <a href="about.html">About</a>
+                        <a href="services.html">Services</a>
+                        <a href="policy.html">Our Policy</a>
+                        <a href="help.html">Help</a>
+                     </div>
+                  </div>
+
+                  <div class="col1" id="contact1">
+                      <h3>Contact</h3>
+                      <div class="contact-details1">
+                         <i class="fa fa-location"></i>
+                         <p> NY, USA, INDIA</p>
+                      </div>
+                      <div class="contact-details1">
+                         <i class="fa fa-phone"></i>
+                         <p>+91-0000000000</p>
+                      </div>
+                      
+                      <div class="contact-details1">
+                        <i class="fa-regular fa-envelope"></i>
+                         <p>expertnews@gmail.com</p>
+                      </div>
+                     </div>
+                  
+                  <div class="col1" id="contact1">
+                      <h3>Note:</h3>
+                     <p>
+                      we are committed to delivering accurate, unbiased news across various categories including politics,
+                       technology, health, and culture.</p>
+                  </div>
+            </div>
+
+            <div class="row1">
+                  <div class="form1">
+                    <form action="">
+                        <input type="text" placeholder="Email here...">
+                        <button><i class="fa fa-paper-plane"></i></button>
+                    </form>
+                  </div>
+            </div>
+
+        </div>
+        
+        <div class="copyright1">
+         <p class="p">© Copyright 2024
+          <br>
+          Designed By <a href="https://avatars.githubusercontent.com/u/115175619?v=4?s=400" target="_blank">Amarjeet obroy</a></p>
+        </div>
+
+      </footer>
+    
+    <!-- ---------------------------------footer-endt----------------------------------------- -->
+    <script src="script.js"></script>
+</body>
+</html>
